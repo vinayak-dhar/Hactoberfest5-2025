@@ -10,24 +10,10 @@
 
 3. Clone the forked repository.
 ```bash
-git clone https://github.com/<your-github-username>/Jarvis.git
+git clone https://github.com/Ash914027/Hactoberfest2025.git
 ```
 
-4. Navigate to the project directory.
-```bash
-cd Jarvis
-```
 
-5. Create a virtual environment.
-```bash
-python -m venv myenv
-source myenv/bin/activate  # On Windows, use `myenv\Scripts\activate`
-```
-
-6. Install the dependencies.
-```bash
-pip install -r requirements.txt
-```
 
 7. Create a new branch.
 ```bash
