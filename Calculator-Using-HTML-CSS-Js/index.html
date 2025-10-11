@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smooth Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="intro" class="intro">
+  <h1>Welcome to the Calculator App</h1>
+  <button id="openBtn">Use Calculator</button>
+</div>
+
+<div id="calcContainer" class="calculator-container">
+  <input type="text" id="display" readonly />
+
+  <div class="buttons">
+    <button onclick="addChar('C')" class="red">C</button>
+    <button onclick="backspace()">←</button>
+    <button onclick="addChar('(')">(</button>
+    <button onclick="addChar(')')">)</button>
+
+    <button onclick="addChar('7')">7</button>
+    <button onclick="addChar('8')">8</button>
+    <button onclick="addChar('9')">9</button>
+    <button onclick="addChar('÷')" class="op">÷</button>
+
+    <button onclick="addChar('4')">4</button>
+    <button onclick="addChar('5')">5</button>
+    <button onclick="addChar('6')">6</button>
+    <button onclick="addChar('*')" class="op">*</button>
+
+    <button onclick="addChar('1')">1</button>
+    <button onclick="addChar('2')">2</button>
+    <button onclick="addChar('3')">3</button>
+    <button onclick="addChar('-')" class="op">-</button>
+
+    <button onclick="addChar('0')">0</button>
+    <button onclick="addChar('.')">.</button>
+    <button onclick="addChar('%')">%</button>
+    <button onclick="addChar('+')" class="op">+</button>
+
+    <button id="equals" onclick="evaluateExpr()">=</button>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
