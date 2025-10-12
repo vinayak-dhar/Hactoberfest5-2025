@@ -1,0 +1,46 @@
+body {
+  background-color: #23272e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Comic Relief';
+  flex-direction: column;
+  padding-inline: 10px;
+}
+h1{
+    color:#98C379;
+    text-align: center;
+
+}
+h1 span {
+     color:#E05C4C
+}
+.container {
+  background-color: #1e2227;
+  width: 100%;
+  max-width: 300px;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  padding-block: 20px;
+  padding-inline: 20px;
+  border-radius: 12px;
+  box-shadow: -1px 1px 2px 0px #E05C4C, 3px 0px 1px 0px #98C379;
+}
+#userInput {
+  padding: 8px 0px 8px 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  color: #23272e;
+}
+.output {
+  margin-top: 16px;
+}
+.output p {
+  font-size: 24px;
+  color:#98C379;
+}
+.output p span {
+    color: #E05C4C;
+}
