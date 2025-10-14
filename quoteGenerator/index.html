@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="quote-box">
+            <div class="quote-header">
+                <h1>💭 Daily Inspiration</h1>
+                <p class="subtitle">Get inspired with random quotes</p>
+            </div>
+
+            <div class="quote-content">
+                <div class="quote-icon">"</div>
+                <p class="quote-text" id="quoteText">Click the button below to generate a random quote</p>
+                <div class="quote-author">
+                    <span id="authorText">- Unknown</span>
+                </div>
+            </div>
+
+            <div class="quote-category">
+                <span id="categoryBadge" class="category-badge">Motivational</span>
+            </div>
+
+            <div class="controls">
+                <button class="btn btn-primary" id="newQuoteBtn">
+                    <span class="btn-icon">🔄</span>
+                    New Quote
+                </button>
+                <button class="btn btn-secondary" id="copyBtn">
+                    <span class="btn-icon">📋</span>
+                    Copy Quote
+                </button>
+                <button class="btn btn-secondary" id="shareBtn">
+                    <span class="btn-icon">🔗</span>
+                    Share
+                </button>
+            </div>
+
+            <div class="filter-section">
+                <h3>Filter by Category</h3>
+                <div class="category-buttons">
+                    <button class="category-btn active" data-category="all">All</button>
+                    <button class="category-btn" data-category="motivational">Motivational</button>
+                    <button class="category-btn" data-category="success">Success</button>
+                    <button class="category-btn" data-category="wisdom">Wisdom</button>
+                    <button class="category-btn" data-category="life">Life</button>
+                    <button class="category-btn" data-category="happiness">Happiness</button>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="quotesGenerated">0</span>
+                    <span class="stat-label">Quotes Generated</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="favoriteCount">0</span>
+                    <span class="stat-label">Favorites</span>
+                </div>
+            </div>
+
+            <button class="btn-favorite" id="favoriteBtn" title="Add to favorites">
+                <span class="heart">♡</span>
+            </button>
+        </div>
+
+        <div class="favorites-section" id="favoritesSection">
+            <h2>❤️ Your Favorite Quotes</h2>
+            <div class="favorites-list" id="favoritesList">
+                <p class="empty-message">No favorites yet. Click the heart to save quotes!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification" id="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
