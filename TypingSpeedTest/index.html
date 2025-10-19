@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Speed Test</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🚀 Typing speed test</h1>
+        <p class="subtitle">Test your speed and accuracy in real time</p>
+      </header>
+
+      <main>
+        <div class="text-container">
+          <div id="text-to-type" class="text-to-type">
+            Click 'Start' to begin. Random text will appear here.
+          </div>
+        </div>
+
+        <div class="input-container">
+          <textarea
+            id="input-field"
+            placeholder="Start typing here..."
+            disabled
+            rows="3"
+          ></textarea>
+        </div>
+
+        <div class="controls">
+          <button id="start-btn" class="start-btn">Start</button>
+        </div>
+
+        <div id="real-time-stats" class="real-time-stats"></div>
+
+        <div id="result" class="result"></div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
