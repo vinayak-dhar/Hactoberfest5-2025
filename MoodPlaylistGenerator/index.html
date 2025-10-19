@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mood Playlist Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background">
+    <div class="container">
+      <h1>🎵 Mood Playlist Generator</h1>
+      <p>Select your current mood:</p>
+      <div class="mood-buttons">
+        <button onclick="generatePlaylist('happy')">😊 Happy</button>
+        <button onclick="generatePlaylist('sad')">😢 Sad</button>
+        <button onclick="generatePlaylist('chill')">😎 Chill</button>
+        <button onclick="generatePlaylist('energetic')">⚡ Energetic</button>
+      </div>
+      <div id="playlist" class="playlist-grid"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
