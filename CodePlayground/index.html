@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Code Playground</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>💻 Interactive Code Playground</h1>
+    <div class="editor-container">
+      <div class="editor">
+        <h3>HTML</h3>
+        <textarea id="htmlCode" placeholder="Write HTML here"></textarea>
+      </div>
+      <div class="editor">
+        <h3>CSS</h3>
+        <textarea id="cssCode" placeholder="Write CSS here"></textarea>
+      </div>
+      <div class="editor">
+        <h3>JS</h3>
+        <textarea id="jsCode" placeholder="Write JavaScript here"></textarea>
+      </div>
+    </div>
+    <button onclick="runCode()">Run Code</button>
+    <h2>Preview:</h2>
+    <iframe id="preview"></iframe>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
