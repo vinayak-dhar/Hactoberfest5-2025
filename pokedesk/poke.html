@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PokéDesk</title>
+        <link rel="stylesheet" href="poke.css">
+    </head>
+    <body>
+
+        <div id="brain">
+            <div id="status"></div>
+            <div id="imagecontainer">
+                <img src="" id="pokeImg" style="visibility:hidden">
+            </div>
+            <input type="text" id="name" placeholder="Enter Pokémon's Name">
+            <br>
+            <br>
+            <button id="fetch">Fetch Data</button>
+            <br>
+            
+            <audio id="pokeCry" src=""></audio>
+        </div>
+        <!-- sprites -->
+        <div id="sprites" class="grids">
+
+
+            <!-- <div id="front"> used createElement and appendChild instead
+                <img src="" style="visibility: hidden">
+            </div>
+            <div id="back">
+                <img src="" style="visibility: hidden;">
+            </div>
+            <div id="front_shiny">
+                <img src="" style="visibility: hidden;">
+            </div>
+            <div id="back_shiny">
+                <img src="" style="visibility: hidden;">
+            </div> -->
+
+        </div>
+        <!-- stats -->
+        <div id="details" style="visibility: hidden;">
+            <div id="pokeName">
+                <h2 id="pokeNameH">name</h2>
+            </div>
+            <div id="info" class="grids">
+                
+                <!-- <h3 id="pokeId">2</h3> -->
+                <div id="type">
+                    <h3 id="pokeType">Type</h3>
+                    
+                    
+                </div>
+                <div id="pokeDim">
+                    <h3>Physical:</h3>
+                </div>
+                <div id="pokeStats">
+
+                    
+                    
+                </div>
+
+
+            </div>
+            <!-- <div id="info2">
+                <h3>Abilities</h3>
+            </div>
+
+            <div id="info3">
+
+            </div>
+            <div id="info4"></div> -->
+
+        </div>
+
+
+
+
+        <script src="poke.js"></script>
+
+    </body>
+</html>
