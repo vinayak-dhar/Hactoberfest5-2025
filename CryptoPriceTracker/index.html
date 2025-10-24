@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Crypto Price Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <h1>Crypto Price Tracker</h1>
+      <div class="controls">
+        <input id="search" placeholder="Search coin (e.g. bitcoin, ethereum)" />
+        <button id="searchBtn">Search</button>
+        <label class="auto-refresh">
+          <input type="checkbox" id="autoRefresh"> Auto-refresh
+        </label>
+      </div>
+    </header>
+
+    <section class="content">
+      <aside class="sidebar">
+        <h2>Trending</h2>
+        <ul id="trendingList" class="list"></ul>
+        <h2>Popular</h2>
+        <ul id="popularList" class="list"></ul>
+      </aside>
+
+      <section class="maincard" id="maincard">
+        <div class="card header-card">
+          <div class="title">
+            <img id="coinImg" src="" alt="" />
+            <div>
+              <h2 id="coinName">Search a coin</h2>
+              <small id="coinSymbol"></small>
+            </div>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <small>Price</small>
+              <div id="coinPrice" class="big">—</div>
+            </div>
+            <div class="stat">
+              <small>24h</small>
+              <div id="coinChange" class="big">—</div>
+            </div>
+            <div class="stat">
+              <small>Market Cap</small>
+              <div id="coinMarketCap" class="big">—</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card chart-card">
+          <canvas id="priceChart"></canvas>
+        </div>
+
+        <div class="card details-card">
+          <div class="detail"><strong>24h Volume:</strong> <span id="coinVolume">—</span></div>
+          <div class="detail"><strong>Circulating Supply:</strong> <span id="coinSupply">—</span></div>
+          <div class="detail"><strong>High 24h:</strong> <span id="coinHigh">—</span></div>
+          <div class="detail"><strong>Low 24h:</strong> <span id="coinLow">—</span></div>
+        </div>
+      </section>
+    </section>
+
+    <footer class="footer">
+      <small>Data from <a href="https://www.coingecko.com/en/api" target="_blank" rel="noreferrer">CoinGecko API</a>. Built for Hacktoberfest 2025.</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
