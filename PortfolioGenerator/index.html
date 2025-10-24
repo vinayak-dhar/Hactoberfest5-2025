@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background">
+    <div class="container">
+      <h1>💼 Personal Portfolio Generator</h1>
+
+      <div class="form-group">
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="text" id="bio" placeholder="Short Bio">
+        <input type="text" id="skills" placeholder="Skills (comma separated)">
+        <input type="text" id="linkedin" placeholder="LinkedIn URL">
+        <input type="text" id="github" placeholder="GitHub URL">
+        <button onclick="generatePortfolio()">Generate Portfolio</button>
+      </div>
+
+      <h2>Preview:</h2>
+      <div id="portfolioPreview" class="portfolio-card"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
