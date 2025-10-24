@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Night Sky Star Map Generator with constellations </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Night Sky Star Map Generator</h1>
+    <p>See how the sky looked with stars and constellations!</p>
+
+    <form id="skyForm">
+      <label for="city">City:</label>
+      <input type="text" id="city" placeholder="Enter your city" required>
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" required>
+
+      <button type="submit">Generate Sky</button>
+    </form>
+
+    <canvas id="skyCanvas"></canvas>
+    <p id="resultText"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
