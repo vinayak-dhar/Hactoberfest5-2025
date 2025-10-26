@@ -9,9 +9,9 @@
   </head>
   <body>
     <div class="icons-container">
-      <div class="rock-btn">Rock🪨</div>
-      <div class="paper-btn">Paper📃</div>
-      <div class="scissors-btn">Scissors✂️</div>
+      <button type="button" class="rock-btn" aria-label="Rock">Rock🪨</button>
+      <button type="button" class="paper-btn" aria-label="Paper">Paper📃</button>
+      <button type="button" class="scissors-btn" aria-label="Scissors">Scissors✂️</button>
     </div>
     <div class="play-game">
       <div class="user-hand">
@@ -24,6 +24,36 @@
         <div class="computer hand-icon">🤛</div>
       </div>
     </div>
+
+    <!-- Multiplayer commit/reveal -->
+    <section class="multiplayer">
+      <h3>Multiplayer (commit → reveal)</h3>
+      <div class="mp-ids">
+        <label>Match ID: <input id="match-id" value="match1" /></label>
+        <label>Player ID: <input id="player-id" value="playerA" /></label>
+      </div>
+
+      <div class="mp-commit">
+        <label>Move:
+          <select id="mp-move">
+            <option value="rock">Rock</option>
+            <option value="paper">Paper</option>
+            <option value="scissors">Scissors</option>
+          </select>
+        </label>
+        <button id="commit-btn">Commit</button>
+        <span id="commit-status" class="status">—</span>
+      </div>
+
+      <div class="mp-reveal">
+        <p>Stored nonce (keep secret until reveal): <code id="stored-nonce">—</code></p>
+        <button id="reveal-btn">Reveal</button>
+        <span id="reveal-status" class="status">—</span>
+      </div>
+
+      <div id="mp-result" class="mp-result">Multiplayer result shows here</div>
+      <p class="mp-note">Server must support /commit and /reveal endpoints (commit = sha256(move|nonce)).</p>
+    </section>
     <!-- Popup -->
     <div class="popup-overlay">
       <div class="popup-content">
