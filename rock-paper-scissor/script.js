@@ -37,12 +37,49 @@ function playSound(sound) {
 // Computer Choice Array
 const iconList = [rockIcon, paperIcon, scissorIcon];
 
-function calculateResult(selectionIcon, winningIcon) {
+/* --- NEW: robust move normalization + deterministic winner logic --- */
+const moveList = ['rock', 'paper', 'scissors'];
+const iconByMove = { rock: rockIcon, paper: paperIcon, scissors: scissorIcon };
+
+function normalizeMoveRaw(input) {
+  if (input === undefined || input === null) return null;
+  const s = String(input).trim().toLowerCase();
+  if (s === '') return null;
+  if (s === 'rock' || s === 'r' || s === '0') return 0;
+  if (s === 'paper' || s === 'p' || s === '1') return 1;
+  if (s === 'scissors' || s === 'scissor' || s === 's' || s === '2') return 2;
+  const n = Number(s);
+  if (!Number.isNaN(n) && (n === 0 || n === 1 || n === 2)) return n;
+  return null;
+}
+
+/**
+ * Returns:
+ *  0 => tie
+ *  1 => player A wins
+ *  2 => player B wins
+ */
+function determineWinner(moveA, moveB) {
+  const a = normalizeMoveRaw(moveA);
+  const b = normalizeMoveRaw(moveB);
+  if (a === null || b === null) {
+    throw new Error('determineWinner: invalid move (accepted: rock/paper/scissors or r/p/s or 0/1/2)');
+  }
+  if (a === b) return 0;
+  return (((a - b + 3) % 3) === 1) ? 1 : 2;
+}
+// expose for tests or other scripts
+window.determineWinner = determineWinner;
+window.normalizeMoveRaw = normalizeMoveRaw;
+
+/* --- UPDATED: calculateResult now uses move names and determineWinner --- */
+function calculateResult(playerMove) {
+  // show initial "shaking" state
   userHandIcon.innerText = '🤜';
   computerHandIcon.innerText = '🤛';
   result.innerText = '🙄';
 
-  //start shake animation
+  // start shake animation
   userHandIcon.classList.add('shakeUserHands');
   computerHandIcon.classList.add('shakeComputerHands');
 
@@ -50,19 +87,33 @@ function calculateResult(selectionIcon, winningIcon) {
     userHandIcon.classList.remove('shakeUserHands');
     computerHandIcon.classList.remove('shakeComputerHands');
 
-    // show user choice
-    userHandIcon.innerText = selectionIcon;
-    const computerChoice = Math.floor(Math.random() * 3);
-    computerHandIcon.innerText = iconList[computerChoice];
+    // show user choice icon
+    const playerIcon = iconByMove[playerMove] || rockIcon;
+    userHandIcon.innerText = playerIcon;
 
-    if (computerHandIcon.innerText === userHandIcon.innerText) {
+    // computer random move
+    const computerIndex = Math.floor(Math.random() * 3);
+    const computerMove = moveList[computerIndex];
+    computerHandIcon.innerText = iconByMove[computerMove];
+
+    // determine winner using deterministic logic
+    let winner;
+    try {
+      winner = determineWinner(playerMove, computerMove);
+    } catch (e) {
+      result.innerText = 'Invalid move';
+      console.error(e);
+      return;
+    }
+
+    if (winner === 0) {
       result.innerText = 'Draw';
-    } else if (computerHandIcon.innerText === winningIcon) {
+    } else if (winner === 1) {
       result.innerText = 'You won!!';
-      userScore.innerText = parseInt(userScore.innerText) + 1;
+      userScore.innerText = parseInt(userScore.innerText, 10) + 1;
     } else {
       result.innerText = 'Sandeep Won!!';
-      computerScore.innerText = parseInt(computerScore.innerText) + 1;
+      computerScore.innerText = parseInt(computerScore.innerText, 10) + 1;
     }
 
     checkScore();
@@ -71,8 +122,8 @@ function calculateResult(selectionIcon, winningIcon) {
 
 // check score
 function checkScore() {
-  const userScoreValue = parseInt(userScore.textContent);
-  const computerScoreValue = parseInt(computerScore.textContent);
+  const userScoreValue = parseInt(userScore.textContent, 10);
+  const computerScoreValue = parseInt(computerScore.textContent, 10);
   if (userScoreValue === 3) {
     // show popup
     showPopup('You Wins! 🎉');
@@ -109,12 +160,13 @@ gameButtons.forEach((btn) => {
   });
 });
 
+// updated event listeners to pass moves (not icons)
 rockBtn.addEventListener('click', () => {
-  calculateResult(rockIcon, scissorIcon);
+  calculateResult('rock');
 });
 paperBtn.addEventListener('click', () => {
-  calculateResult(paperIcon, rockIcon);
+  calculateResult('paper');
 });
 scissorBtn.addEventListener('click', () => {
-  calculateResult(scissorIcon, paperIcon);
+  calculateResult('scissors');
 });

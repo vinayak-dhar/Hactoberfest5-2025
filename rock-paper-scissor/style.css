@@ -145,12 +145,12 @@ body {
   }
 }
 .hand-icon.active {
-  animation: handShake 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  /* changed: use defined keyframe name (shakeUserHands) instead of missing handShake */
+  animation: shakeUserHands 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   color: #ffd700;
-
-  .user-hand .hand-icon {
-    text-shadow: 0 0 15px rgba(57, 186, 61, 0.5);
-  }
+}
+.user-hand .hand-icon {
+  text-shadow: 0 0 15px rgba(57, 186, 61, 0.5);
 }
 .computer-hand .hand-icon {
   text-shadow: 0 0 15px rgba(57, 186, 61, 0.5);
@@ -239,7 +239,21 @@ body {
     font-size: 4.4rem;
   }
   .result {
-    font-size: 0.75rem;
-    width: 25%;
+    font-size: 0.95rem;
+    width: auto; /* was 25% — too small on mobile */
   }
 }
+
+/* Minimal styles for the multiplayer UI added by the script */
+.multiplayer {
+  margin-top: 1rem;
+  background: rgba(255,255,255,0.03);
+  padding: 1rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+.multiplayer .mp-ids label { display:inline-block; margin-right:0.5rem; color:#fff; }
+.multiplayer .status { margin-left:0.6rem; color:#ddd; font-weight:600; }
+.multiplayer code { background: rgba(255,255,255,0.03); padding:0.2rem 0.4rem; border-radius:6px; color:#fff; }
