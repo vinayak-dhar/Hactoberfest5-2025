@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Timed Clicker — Click as many as you can!</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Timed Clicker</h1>
+      <p class="tag">Click the button as many times as you can before the time ends!</p>
+    </header>
+
+    <section class="game">
+      <div class="hud">
+        <div class="stat">Time: <span id="time">10</span>s</div>
+        <div class="stat">Score: <span id="score">0</span></div>
+        <div class="stat">Best: <span id="best">0</span></div>
+      </div>
+
+      <button id="clickBtn" class="click-btn" aria-label="Click button">Click</button>
+
+      <div class="controls">
+        <label>
+          Duration:
+          <select id="duration">
+            <option value="5">5s</option>
+            <option value="10" selected>10s</option>
+            <option value="20">20s</option>
+            <option value="30">30s</option>
+          </select>
+        </label>
+
+        <button id="startBtn" class="start">Start</button>
+        <button id="resetBtn" class="reset">Reset Best</button>
+      </div>
+
+      <div id="message" class="message" aria-live="polite"></div>
+    </section>
+
+    <footer class="foot">Made for Hacktoberfest • Simple timed clicker</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
