@@ -1,0 +1,67 @@
+body {
+  background: linear-gradient(to bottom, #87ceeb, #ffffff);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.game-container {
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+}
+
+.game-area {
+  width: 400px;
+  height: 500px;
+  background: #e0f7fa;
+  border: 3px solid #333;
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.basket {
+  width: 80px;
+  height: 40px;
+  background: brown;
+  border-radius: 0 0 50% 50%;
+  position: absolute;
+  bottom: 0;
+  left: 160px;
+  transition: left 0.1s;
+}
+
+.egg {
+  width: 30px;
+  height: 40px;
+  background: radial-gradient(circle, #fff 60%, #ccc);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 200px;
+}
+
+.info {
+  font-size: 18px;
+}
+
+button {
+  padding: 8px 15px;
+  font-size: 16px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #388e3c;
+}
