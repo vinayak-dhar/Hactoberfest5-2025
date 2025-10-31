@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binary ↔ Decimal Converter</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+</body>
+
+  <div class="app-wrap">
+    <header class="header">
+      <div class="brand">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="6" fill="url(#g)" />
+          <defs>
+            <linearGradient id="g" x1="0" x2="1">
+              <stop offset="0" stop-color="#7C5AED" />
+              <stop offset="1" stop-color="#00D4FF" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <div>
+          <h1>Binary ↔ Decimal</h1>
+          <p class="muted">Fast, friendly number conversions</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="card">
+        <div class="mode-switch" role="tablist" aria-label="Conversion mode">
+          <button id="modeBinToDec" class="mode active" data-mode="bin-to-dec" aria-pressed="true">Binary → Decimal</button>
+          <button id="modeDecToBin" class="mode" data-mode="dec-to-bin" aria-pressed="false">Decimal → Binary</button>
+        </div>
+
+        <label for="inputValue" class="label">Input</label>
+        <input type="text" id="inputValue" placeholder="Enter binary or decimal" autocomplete="off">
+        <div id="helper" class="helper">Type a binary (e.g. 1011) or decimal (e.g. 13) and press Convert.</div>
+        <div id="error" class="error" role="alert" aria-live="polite"></div>
+
+        <div class="actions">
+          <button id="convertBtn" class="btn primary">Convert</button>
+          <button id="clearBtn" class="btn ghost">Clear</button>
+        </div>
+
+        <div id="outputCard" class="output-card" hidden>
+          <div class="output-label">Result</div>
+          <div class="output-row">
+            <div id="output" class="output-value">—</div>
+            <div class="output-actions">
+              <button id="copyBtn" class="icon-btn" title="Copy result">Copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">Made with ❤️ • <a href="../readme.md">README</a></footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
